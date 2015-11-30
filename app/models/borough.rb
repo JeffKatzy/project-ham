@@ -18,7 +18,8 @@ class Borough < ActiveRecord::Base
   has_many :jobs
   has_many :farmers_markets
   has_many :community_gardens
-  
+  # remove the repetition btwn these methods
+  # nice use of send
   def hospital_count(normalizer)
     num_of_hospitals = hospitals.count.to_f
     normalizer != "nil" ? num_of_hospitals/self.send(normalizer) : num_of_hospitals

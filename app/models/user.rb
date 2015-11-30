@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   has_many :favorites
 
-
+# remove pry
 
   def self.create_with_omniauth(auth)
     binding.pry

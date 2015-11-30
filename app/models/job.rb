@@ -15,7 +15,7 @@
 class Job < ActiveRecord::Base
   belongs_to :borough
   has_many :favorites
-  
+  # CSV should be in its own object
   def self.create_csv
     csv_text = File.read('public/labor_data.csv')
     csv = CSV.parse(csv_text, :headers => true)

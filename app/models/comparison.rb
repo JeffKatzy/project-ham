@@ -12,7 +12,9 @@ class Comparison
 
   attr_accessor :data1, :data2, :normalizer1, :normalizer2
   attr_reader :correlation, :exp1, :exp2
-
+  # I know this method is abstract, but its hard to determine what it does
+  # Also, the use of Borough tells me that its not as abstract as some of the method names
+  # I think that tests here would really help
   def initialize(data1, data2, normalizer1, normalizer2)
     @data1 = data1
     @data2 = data2

@@ -12,7 +12,7 @@
 class PublicBin < ActiveRecord::Base
 
   BOROUGH_HASH = {"bronx"=>1, "brooklyn"=>2, "manhattan"=>3, "queens"=>4, "staten island"=>5}
-
+# belongs in adapter
   def self.parse_data
     url = 'http://data.cityofnewyork.us/api/views/sxx4-xhzg/rows.json?'
     buffer = open(url).read

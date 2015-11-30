@@ -8,7 +8,8 @@ class ComparisonsController < ApplicationController
    
     @boroughs = Borough.all
     @comparison = Comparison.new(params[:data_set_one],params[:data_set_two],params[:normalizer_one],params[:normalizer_two])
-
+# this logic shuld be in an adapter, or somewhere else
+# Way too big for one method in a controller
     data_array_1 = @comparison.get_hash(params[:data_set_one],params[:normalizer_one]).values
     data_array_2 = @comparison.get_hash(params[:data_set_two],params[:normalizer_two]).values
     gon.graph_name = "#{params[:data_set_one]} vs #{params[:data_set_two]}"
